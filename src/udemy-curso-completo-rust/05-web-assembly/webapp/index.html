@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Rust: WebAssembly</title>
+    <script type="module">
+      const coin_input = document.getElementById("coin");
+      const coin_button = document.getElementById("price_button");
+      const coin_label = document.getElementById("price_label");
+
+      import init, { get_coin_price } from "../pkg/web_assembly.js";
+      init().then(() => {
+        coin_button.addEventListener("click", (event) => {
+          console.log("JS WebAssembly init");
+          get_coin_price(coin_input.value).then((response) => {
+            console.log("Response: " + response);
+            coin_label.innerText = response;
+          });
+        });
+      });
+    </script>
+  </head>
+  <body>
+    <h1>Rust: WebAssembly</h1>
+    <p>Example using WebAssembly with Rust.</p>
+    <div>
+      <form name="get_coins" onsubmit="return false;">
+        <input type="text" id="coin" placeholder="Moneda" />
+        <button id="price_button">Vamos!</button>
+      </form>
+    </div>
+    <h2 id="price_label"></h2>
+  </body>
+</html>

@@ -1,0 +1,9 @@
+Hello
+Car
+Cat
+Bye
+Chair
+Box
+Good bye
+Love
+Miau

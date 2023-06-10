@@ -1,0 +1,12 @@
+[package]
+name = "webapp"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+yew = { version = "0.20.0", features = ["csr"] }
+web-sys = { version = "0.3.63", features = ["Event", "InputEvent"] }
+wasm-bindgen = "0.2.86"
+wasm-bindgen-futures = "0.4.36"
+gloo-net = "0.2.6"
+serde = { version = "1.0.163", features = ["derive"] }
